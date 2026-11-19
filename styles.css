@@ -135,3 +135,27 @@ img, video, iframe { max-width: 100%; height: auto; }
     html { scroll-behavior: auto; }
     *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
 }
+
+
+/* Welding hazard and safety color guide */
+.hazard-guide {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+.hazard-card {
+    margin: 0;
+    padding: 1rem;
+    border: 2px solid currentColor;
+    border-left-width: .5rem;
+    border-radius: .45rem;
+    background: var(--white);
+}
+.hazard-card h3 { margin: 0 0 .5rem; color: inherit; }
+.hazard-card p { margin: 0; }
+.hazard-danger { color: #B3261E; }
+.hazard-warning { color: #6B5200; background: #FFF8D9; }
+.hazard-caution { color: #8A3B00; background: #FFF1E6; }
+.safety-required { color: #005A9C; background: #EEF6FC; }
+.safety-safe { color: #176B3A; background: #EDF7F0; }

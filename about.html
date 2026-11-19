@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>About | My Portfolio</title>
+    <title>About & Contact | Welding & Metal Fabrication Portfolio</title>
+    <meta name="description" content="Learn about my welding interests, safety priorities, goals, and how to contact me.">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,9 +15,11 @@
 
     <!-- External CSS -->
     <link rel="stylesheet" href="styles.css">
+    <script src="form-validation.js" defer></script>
 </head>
 
 <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
 
     <header>
         <h1>Welding &amp; Metal Fabrication</h1>
@@ -27,14 +30,14 @@
         <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="projects.html">Projects</a></li>
-            <li><a href="about.html">About</a></li>
+            <li><a href="about.html" aria-current="page">About</a></li>
         </ul>
     </nav>
 
-    <main>
+    <main id="main-content">
 
-        <section>
-            <h2>About Welding</h2>
+        <section aria-labelledby="about-section-1">
+            <h2 id="about-section-1">About Welding</h2>
             <p>
                 Welding is the process of joining two or more pieces of metal
                 using heat, pressure, or both. It is an important skill used
@@ -50,8 +53,8 @@
             </p>
         </section>
 
-        <section>
-            <h2>Types of Welding</h2>
+        <section aria-labelledby="about-section-2">
+            <h2 id="about-section-2">Types of Welding</h2>
 
             <div class="project-grid">
                 <article>
@@ -83,8 +86,8 @@
             </div>
         </section>
 
-        <section>
-            <h2>My Welding Interests</h2>
+        <section aria-labelledby="about-section-3">
+            <h2 id="about-section-3">My Welding Interests</h2>
             <ul>
                 <li>Learning different welding techniques</li>
                 <li>Metal cutting and fabrication</li>
@@ -95,8 +98,8 @@
             </ul>
         </section>
 
-        <section>
-            <h2>Welding Safety</h2>
+        <section aria-labelledby="about-section-4">
+            <h2 id="about-section-4">Welding Safety</h2>
             <p>
                 Safety is one of the most important parts of welding.
                 Proper protective equipment and safe working conditions
@@ -112,8 +115,8 @@
             </ul>
         </section>
 
-        <section>
-            <h2>My Future Goals</h2>
+        <section aria-labelledby="about-section-5">
+            <h2 id="about-section-5">My Future Goals</h2>
             <p>
                 I want to continue developing my welding knowledge and
                 hands-on skills. I also have an interest in technology,
@@ -121,6 +124,51 @@
                 and build a career that combines technical knowledge
                 with problem-solving skills.
             </p>
+        </section>
+
+    
+        <section class="contact-panel" aria-labelledby="contact-heading">
+            <h2 id="contact-heading">Contact Me</h2>
+            <p>Use this form to send a message about welding, projects, or collaboration.</p>
+            <div id="form-errors" class="error-summary" role="alert" aria-live="assertive" tabindex="-1" hidden>
+                <h3>Please correct the following fields:</h3>
+                <ul id="error-list"></ul>
+            </div>
+            <form id="contact-form" novalidate>
+                <div class="form-field">
+                    <label for="full-name">Full name <span aria-hidden="true">*</span></label>
+                    <input id="full-name" name="full-name" type="text" autocomplete="name" required aria-describedby="full-name-hint">
+                    <p class="field-hint" id="full-name-hint">Enter your first and last name.</p>
+                    <p class="field-error" id="full-name-error"></p>
+                </div>
+                <div class="form-field">
+                    <label for="email">Email address <span aria-hidden="true">*</span></label>
+                    <input id="email" name="email" type="email" autocomplete="email" required aria-describedby="email-hint">
+                    <p class="field-hint" id="email-hint">We will use this address to reply.</p>
+                    <p class="field-error" id="email-error"></p>
+                </div>
+                <div class="form-field">
+                    <label for="subject">Subject <span aria-hidden="true">*</span></label>
+                    <input id="subject" name="subject" type="text" required>
+                    <p class="field-error" id="subject-error"></p>
+                </div>
+                <fieldset class="form-field choice-group">
+                    <legend>What is your message about?</legend>
+                    <label class="choice"><input type="radio" name="topic" value="Welding question" checked> Welding question</label>
+                    <label class="choice"><input type="radio" name="topic" value="Project feedback"> Project feedback</label>
+                    <label class="choice"><input type="radio" name="topic" value="Other"> Other</label>
+                </fieldset>
+                <div class="form-field">
+                    <label for="message">Message <span aria-hidden="true">*</span></label>
+                    <textarea id="message" name="message" rows="6" required aria-describedby="message-hint"></textarea>
+                    <p class="field-hint" id="message-hint">Please include enough detail for me to understand your message.</p>
+                    <p class="field-error" id="message-error"></p>
+                </div>
+                <p class="required-note">Fields marked with an asterisk (*) are required.</p>
+                <button class="button" type="submit">Validate message</button>
+                <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
+            </form>
+            <p class="form-note">This is a front-end demonstration form; it validates entries in the browser but does not send or store messages. Connect a form service or server endpoint before publishing it for real contact submissions.</p>
         </section>
 
     </main>

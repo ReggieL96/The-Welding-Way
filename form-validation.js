@@ -5,7 +5,7 @@
 
     const fields = [
         { id: "full-name", label: "Full name", validate: v => v.trim().length >= 2 || "Enter your name (at least 2 characters)." },
-        { id: "email", label: "Email address", validate: v => /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/.test(v.trim()) || "Enter a valid email address." },
+        { id: "email", label: "Email address", validate: v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()) || "Enter a valid email address." },
         { id: "subject", label: "Subject", validate: v => v.trim().length > 0 || "Enter a subject." },
         { id: "message", label: "Message", validate: v => v.trim().length >= 10 || "Enter a message of at least 10 characters." }
     ];
@@ -17,7 +17,7 @@
         const input = document.getElementById(field.id);
         const error = document.getElementById(field.id + "-error");
         input.removeAttribute("aria-invalid");
-        const ids = (input.getAttribute("aria-describedby") || "").split(/\\s+/).filter(id => id && id !== field.id + "-error");
+        const ids = (input.getAttribute("aria-describedby") || "").split(/\s+/).filter(id => id && id !== field.id + "-error");
         if (ids.length) input.setAttribute("aria-describedby", ids.join(" "));
         else input.removeAttribute("aria-describedby");
         error.textContent = "";
@@ -25,7 +25,7 @@
     function setError(field, message) {
         const input = document.getElementById(field.id);
         input.setAttribute("aria-invalid", "true");
-        const ids = (input.getAttribute("aria-describedby") || "").split(/\\s+/).filter(Boolean);
+        const ids = (input.getAttribute("aria-describedby") || "").split(/\s+/).filter(Boolean);
         if (!ids.includes(field.id + "-error")) ids.push(field.id + "-error");
         input.setAttribute("aria-describedby", ids.join(" "));
         document.getElementById(field.id + "-error").textContent = message;

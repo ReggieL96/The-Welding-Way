@@ -65,3 +65,18 @@ Run the [WAVE Web Accessibility Evaluation Tool](https://wave.webaim.org/) again
 Review each WAVE report, correct any remaining errors, and save a screenshot of each zero-error report for submission evidence. Automated testing does not replace keyboard and screen-reader testing.
 
 **Testing status:** The code has been updated with the fixes described above, but WAVE has not yet been run against the deployed pages. Do not claim WAVE verification or zero WAVE errors until all three live reports have been checked.
+
+
+## Welding hazard and safety color guide
+
+The About page includes labeled examples of common safety-sign color meanings:
+
+| Color | Meaning | Welding-related examples |
+|---|---|---|
+| Red | Danger / fire protection | Fire hazards and fire protection equipment |
+| Yellow | Warning | Potential hazards requiring caution |
+| Orange | Caution / machine hazards | Hot metal and hazardous machine parts |
+| Blue | Required action | Mandatory PPE and safety instructions |
+| Green | Safe condition | First aid and emergency exits |
+
+Color is always paired with a written label and explanation so the information does not depend on color perception alone. Follow the safety-sign standards and procedures used by the specific workplace.

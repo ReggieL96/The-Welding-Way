@@ -1,0 +1,138 @@
+
+/* General page styling */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #252A2E;
+    color: #E5E9EC;
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    background-color: #8A949B;
+    color: #252A2E;
+    text-align: center;
+    padding: 40px 20px;
+    border-bottom: 6px solid #FF6D00;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+header p {
+    font-size: 1.1rem;
+    margin-bottom: 0;
+}
+
+/* Navigation */
+nav {
+    background-color: #1B1F22;
+    padding: 15px;
+    border-bottom: 3px solid #FF1744;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    color: #FFE600;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+nav a:hover {
+    color: #FF6D00;
+}
+
+/* Main content */
+main {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 20px;
+}
+
+section {
+    background-color: #353C41;
+    margin-bottom: 25px;
+    padding: 25px;
+    border-left: 5px solid #FF6D00;
+    border-radius: 5px;
+}
+
+h2 {
+    color: #FF1744;
+    text-transform: uppercase;
+    border-bottom: 2px solid #8A949B;
+    padding-bottom: 8px;
+}
+
+h3 {
+    color: #FFE600;
+}
+
+/* Project cards */
+article {
+    background-color: #252A2E;
+    padding: 20px;
+    margin: 15px 0;
+    border: 1px solid #8A949B;
+    border-left: 4px solid #FF1744;
+    border-radius: 5px;
+}
+
+article p {
+    margin-bottom: 0;
+}
+
+/* Links */
+a {
+    transition: color 0.2s ease;
+}
+
+/* Footer */
+footer {
+    background-color: #1B1F22;
+    color: #E5E9EC;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    border-top: 5px solid #FFE600;
+}
+
+/* Mobile layout */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+    }
+
+    main {
+        padding: 12px;
+    }
+
+    section {
+        padding: 18px;
+    }
+}
